@@ -1,0 +1,50 @@
+<template name="profileFeed">
+    <div class="wrapper">
+        <div class="box">
+            <div class="row row-offcanvas row-offcanvas-left">
+                <!-- sidebar -->
+                {{>sidebar}}
+                <!-- /sidebar -->
+                <!-- main right col -->
+                <div class="column col-sm-11 col-xs-11" id="main">
+                    <!-- top nav -->
+                    {{>topnav}}
+                    <!-- /top nav -->
+                    <div class="padding">
+                        <div class="full col-sm-9">
+                            <!-- content -->
+                            <div class="row">
+                                {{>profileDetails}}
+                                <!-- main col right -->
+                                <div class="col-sm-7">
+                                    {{#if editingQuery}}
+                                        {{>editForm}}
+                                    {{else}}
+
+                                    <div class="well">
+                                        <form class="form-horizontal" role="form">
+                                            <h4>Postea</h4>
+                                            <div class="form-group" style="padding: 2.5%;">
+                                                <textarea class="form-control" name="new-post" placeholder="{{statusPlaceholder}}"></textarea>
+
+                                                <button style="margin-top: 6%;" class="btn btn-primary pull-right new-post" type="button">Post</button>
+                                            </div>                                 
+                                        </form>
+                                    </div>
+
+                                    {{#each stories}}
+                                        {{>story this}}
+                                    {{/each}}
+                                    {{/if}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /main -->
+            </div>
+        </div>
+    </div>
+    {{>modal}}
+</template>

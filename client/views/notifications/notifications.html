@@ -1,0 +1,39 @@
+<template name="notifications">
+  <div class="wrapper">
+      <div class="box">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <!-- sidebar -->
+              {{>sidebar}}
+              <!-- /sidebar -->
+              <!-- main right col -->
+              <div class="column col-sm-11 col-xs-11" id="main">
+                  <!-- top nav -->
+                  {{>topnav}}
+                  <!-- /top nav -->
+                  <div class="padding">
+                      <div class="full col-sm-9">
+                          <!-- content -->
+                          {{profile}}
+                            <div class="row">
+                              {{#each friendRequests}}
+                              <div class="thumbnail col-sm-6 col-md-4">
+                                <div class=" col-sm-1 col-md-1"></div>
+                                <div class=" col-sm-4 col-md-4">
+                                  <img src="{{friendPicture this}}" style=" padding-top:10px;"></div>
+                                  <div class="caption col-sm-6 col-md-6" style="text-align:center; margin-top: -3%;">
+                                    <h3>{{friendUsername this}}</h3>
+                                    <p alygn="center"><a href="#" class="btn btn-success accept" role="button">Aceptar</a> <a href="#" class="btn btn-danger refuse" role="button">Rechazar</a></p>
+                                  </div>
+                                  <div class=" col-sm-1 col-md-1"></div>
+                              </div>
+                              {{/each}}
+                            </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- /main -->
+          </div>
+      </div>
+  </div>
+  {{>modal}}
+</template>

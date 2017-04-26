@@ -1,0 +1,42 @@
+<template name="feed">
+    <div class="padding">
+        <div class="full col-sm-9">
+
+            <!-- content -->
+            <div class="row">
+
+                <!-- main col right -->
+                <div class="col-sm-12 ">
+                    {{#each feedStories}}
+                        {{>story this}}
+                    {{/each}}
+
+                </div>
+            </div>
+            <!--/row-->
+
+            <div class="row" id="footer">
+                <div class="col-sm-6">
+
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                        <a href="#" class="pull-right">�Copyright 2013</a>
+                    </p>
+                </div>
+            </div>
+
+            <hr>
+
+            <h4 class="text-center">
+          <a href="http://usebootstrap.com/theme/facebook" target="ext">Download this Template @Bootply</a>
+          </h4>
+
+            <hr>
+
+
+        </div>
+        <!-- /col-9 -->
+    </div>
+    <!-- /padding -->
+</template>
